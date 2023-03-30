@@ -2,7 +2,7 @@ import React from "react";
 
 const Bookmarked = () => {
   return (
-    <div className="w-2/6">
+    <div className="lg:w-2/6">
       {/* spend time on read section  */}
       <div className="border-1 rounded-md border border-solid border-indigo-600 bg-indigo-100 bg-opacity-50 py-4 text-center text-2xl font-semibold text-indigo-600 ">
         <p>Spent time on read : 177 min</p>
