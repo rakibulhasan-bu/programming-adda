@@ -19,11 +19,12 @@ const App = () => {
       (singleBlog) => singleBlog.id === blog.id
     );
     if (ifExist && ifExist.id === blog.id) {
-      toast.error("This blog is already bookmarked", {
+      toast.error("You Have Already Bookmarked This Blog", {
         position: "top-center",
       });
     } else {
       setBookMarkedBlogs([...bookMarkedBlogs, blog]);
+      localStorage.setItem("bookmark", JSON.stringify(bookMarkedBlogs));
     }
   };
 

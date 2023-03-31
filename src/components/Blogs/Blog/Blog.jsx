@@ -1,8 +1,7 @@
 import React from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { FaBookmark } from "react-icons/fa";
 
 const Blog = ({ blog, handleMarkAsRead, handleBookMark }) => {
   const { firstName, lastName, title, time, profileImage, coverImage, date } =
@@ -37,17 +36,16 @@ const Blog = ({ blog, handleMarkAsRead, handleBookMark }) => {
               <p className="text-sm font-medium text-zinc-700">{date}</p>
             </div>
           </div>
-          <div className="space-x-2 pr-3 font-medium text-black text-opacity-60">
+          <div className="flex items-center space-x-2 pr-3 font-medium text-black text-opacity-60">
             <span>
               {time < 10 ? "0" : ""}
               {time} min read
             </span>
-            <span
+
+            <FaBookmark
               onClick={() => handleBookMark(blog)}
-              className="cursor-pointer"
-            >
-              <FontAwesomeIcon icon={faCoffee} />
-            </span>
+              className="cursor-pointer text-xl"
+            />
           </div>
         </div>
 
