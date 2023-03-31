@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import Blogs from "./components/Blogs/Blogs";
 import Bookmarked from "./components/Bookmarked/Bookmarked";
 import Header from "./components/Header/Header";
@@ -14,7 +15,16 @@ const App = () => {
   };
 
   const handleBookMark = (blog) => {
-    setBookMarkedBlogs([...bookMarkedBlogs, blog]);
+    const ifExist = bookMarkedBlogs.find(
+      (singleBlog) => singleBlog.id === blog.id
+    );
+    if (ifExist && ifExist.id === blog.id) {
+      toast.error("This blog is already bookmarked", {
+        position: "top-center",
+      });
+    } else {
+      setBookMarkedBlogs([...bookMarkedBlogs, blog]);
+    }
   };
 
   useEffect(() => {

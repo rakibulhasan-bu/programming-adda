@@ -1,4 +1,8 @@
 import React from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 
 const Blog = ({ blog, handleMarkAsRead, handleBookMark }) => {
   const { firstName, lastName, title, time, profileImage, coverImage, date } =
@@ -14,6 +18,8 @@ const Blog = ({ blog, handleMarkAsRead, handleBookMark }) => {
             alt=""
           />
         </div>
+
+        <ToastContainer />
 
         <div className="mt-4 flex items-center justify-between">
           <div className="flex gap-4">
@@ -40,7 +46,7 @@ const Blog = ({ blog, handleMarkAsRead, handleBookMark }) => {
               onClick={() => handleBookMark(blog)}
               className="cursor-pointer"
             >
-              B
+              <FontAwesomeIcon icon={faCoffee} />
             </span>
           </div>
         </div>
