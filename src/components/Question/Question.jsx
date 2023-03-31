@@ -7,9 +7,9 @@ const Question = () => {
         <h1>Some important Query</h1>
       </div>
 
-      <div className="mt-4 rounded-md bg-gray-700 bg-opacity-10 px-6 py-8 font-semibold">
+      <div className="mt-4 rounded-md bg-gray-700 bg-opacity-10 px-2 py-4 font-semibold md:px-6 md:py-8">
         {/* question one  */}
-        <h1 className="text-2xl font-semibold">
+        <h1 className="text-xl font-semibold md:text-2xl">
           01. What is difference between props vs state ?
         </h1>
         <p className="mb-4 mt-2 rounded-md bg-white px-3 py-2 font-semibold">
@@ -21,7 +21,7 @@ const Question = () => {
           state value are changeable or mutable but props value are immutable.
         </p>
         {/* question two  */}
-        <h1 className="mt-6 text-2xl font-semibold">
+        <h1 className="mt-6 text-xl font-semibold md:text-2xl">
           02. How does useState work ?
         </h1>
         <p className="mb-4 mt-2 rounded-md bg-white px-3 py-2 font-semibold">
@@ -32,7 +32,7 @@ const Question = () => {
           don't update manually that's are update useState.
         </p>
         {/* question three  */}
-        <h1 className="mt-6 text-2xl font-semibold">
+        <h1 className="mt-6 text-xl font-semibold md:text-2xl">
           03. What is the purpose of useEffect other than fetching data ?
         </h1>
         <p className="mb-4 mt-2 rounded-md bg-white px-3 py-2 font-semibold">
@@ -46,7 +46,7 @@ const Question = () => {
           if these parameter are changes .
         </p>
         {/* question four  */}
-        <h1 className="mt-6 text-2xl font-semibold">
+        <h1 className="mt-6 text-xl font-semibold md:text-2xl">
           04. How Does React work ?
         </h1>
         <p className="mb-4 mt-2 rounded-md bg-white px-3 py-2 font-semibold">

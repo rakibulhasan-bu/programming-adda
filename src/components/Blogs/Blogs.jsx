@@ -1,18 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import Blog from "./Blog/Blog";
 
-const Blogs = ({ blogs }) => {
+const Blogs = ({ blogs, handleMarkAsRead, handleBookMark }) => {
+  const [showAll, setShowAll] = useState(false);
+
   return (
-    <div className="w-4/6 space-y-4 rounded-md bg-gray-700 bg-opacity-10 p-4">
-      {blogs.map((blog) => (
-        <Blog key={blog.id} blog={blog} />
+    <div className="space-y-4 rounded-md bg-gray-700 bg-opacity-10 md:p-4 lg:w-4/6">
+      {blogs.slice(0, showAll ? 10 : 2).map((blog) => (
+        <Blog
+          key={blog.id}
+          blog={blog}
+          handleMarkAsRead={handleMarkAsRead}
+          handleBookMark={handleBookMark}
+        />
       ))}
 
-      <div className="flex justify-center">
-        <div className="inline-block cursor-pointer select-none rounded-md bg-indigo-500 px-4 py-1 text-center text-2xl font-semibold text-white delay-100 ease-in-out hover:bg-indigo-900">
-          Show all
+      {!showAll && (
+        <div className="flex justify-center">
+          <div
+            onClick={() => setShowAll(true)}
+            className="inline-block cursor-pointer select-none rounded-md bg-indigo-500 px-4 py-1 text-center text-2xl font-semibold text-white delay-100 ease-in-out hover:bg-indigo-900"
+          >
+            Show all
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

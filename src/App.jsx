@@ -6,6 +6,16 @@ import Question from "./components/Question/Question";
 
 const App = () => {
   const [blogs, setBlogs] = useState([]);
+  const [readTime, setReadTime] = useState(0);
+  const [bookMarkedBlogs, setBookMarkedBlogs] = useState([]);
+
+  const handleMarkAsRead = (time) => {
+    setReadTime(readTime + time);
+  };
+
+  const handleBookMark = (blog) => {
+    setBookMarkedBlogs([...bookMarkedBlogs, blog]);
+  };
 
   useEffect(() => {
     fetch("./fakeData.json")
@@ -17,8 +27,12 @@ const App = () => {
     <div>
       <Header />
       <div className="mx-auto flex w-11/12 flex-col gap-4 pt-4 lg:w-4/5 lg:flex-row">
-        <Blogs blogs={blogs} />
-        <Bookmarked />
+        <Blogs
+          blogs={blogs}
+          handleMarkAsRead={handleMarkAsRead}
+          handleBookMark={handleBookMark}
+        />
+        <Bookmarked readTime={readTime} bookMarkedBlogs={bookMarkedBlogs} />
       </div>
       <Question />
     </div>
