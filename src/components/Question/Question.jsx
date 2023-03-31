@@ -7,7 +7,7 @@ const Question = () => {
         <h1>Some important Query</h1>
       </div>
 
-      <div className="mt-4 rounded-md bg-gray-900 bg-opacity-10 px-6 py-8 font-semibold">
+      <div className="mt-4 rounded-md bg-gray-700 bg-opacity-10 px-6 py-8 font-semibold">
         {/* question one  */}
         <h1 className="text-2xl font-semibold">
           01. What is difference between props vs state ?
